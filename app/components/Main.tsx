@@ -20,6 +20,9 @@ export default function Main({}: Props) {
     e.preventDefault()
     setLoading(true)
     setBtnDisabled(true)
+
+    if (btnDisabled) return
+
     const formData = new FormData(e.currentTarget)
     const prompt = formData.get('prompt')
 
@@ -59,7 +62,7 @@ export default function Main({}: Props) {
           rows={2}
           defaultValue={promptmaker()}
           placeholder='Enter gif prompt...'
-          className='w-full max-w-sm p-2 rounded-lg bg-slate-100 border-none text-slate-600 placeholder-slate-400 border border-slate-200'
+          className='w-full max-w-sm p-2 rounded-lg bg-slate-100 border-none text-slate-600 placeholder-slate-400 border border-slate-200 resize-none'
         />
         <button
           type='submit'
