@@ -1,6 +1,8 @@
 ## AI GIFs
 
-![AI GIFs Demo](https://github.com/btahir/ai-gifs/blob/main/public/demo.gif)
+<p align="center">
+<img src="https://github.com/btahir/ai-gifs/blob/main/public/demo.gif" alt="AI GIFs Demo">
+</p>
 
 AI GIFs is a powerful application that lets you generate GIFs using advanced AI techniques. Whether you're looking for a unique meme, a captivating animation, or just exploring the boundaries of AI-generated content, AI GIFs has got you covered.
 
