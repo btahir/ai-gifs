@@ -13,11 +13,13 @@ type Props = {}
 
 export default function Main({}: Props) {
   const [loading, setLoading] = useState(false)
+  const [btnDisabled, setBtnDisabled] = useState(false)
   const [resultUrl, setResultUrl] = useState('')
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setLoading(true)
+    setBtnDisabled(true)
     const formData = new FormData(e.currentTarget)
     const prompt = formData.get('prompt')
 
@@ -35,11 +37,13 @@ export default function Main({}: Props) {
 
     if (data.status === 429) {
       setLoading(false)
+      setBtnDisabled(false)
       alert('You have hit the limit. Please try again in 3 hours.')
       return
     } else {
       setResultUrl(data.message)
       setLoading(false)
+      setBtnDisabled(false)
     }
   }
 
@@ -59,7 +63,11 @@ export default function Main({}: Props) {
         />
         <button
           type='submit'
-          className='bg-blue-600 hover:bg-blue-700 hover:text-white text-base text-slate-50 py-2 px-4 mt-2 rounded-lg border w-full max-w-sm'
+          className={`bg-blue-600 hover:bg-blue-700 hover:text-white text-base text-slate-50 py-2 px-4 mt-2 rounded-lg border w-full max-w-sm ${
+            btnDisabled
+              ? 'opacity-50 cursor-not-allowed pointer-events-none'
+              : ''
+          }}`}
         >
           Generate
         </button>
