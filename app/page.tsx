@@ -41,8 +41,8 @@ export default function IndexPage() {
   }
 
   return (
-    <main className='bg-white text-slate-900 h-full w-full min-h-screen py-12 px-2 lg:px-6'>
-      <h1 className='text-4xl sm:text-55xl font-bold text-center text-blue-950'>
+    <main className='bg-white text-slate-900 h-full w-full min-h-screen py-12 lg:px-6'>
+      <h1 className='text-4xl sm:text-5xl font-extrabold text-center text-blue-950'>
         AI GIFs
       </h1>
       <p className='text-slate-500 text-center mt-2 text-xl sm:text-2xl'>
@@ -79,7 +79,7 @@ export default function IndexPage() {
             </div>
           ) : resultUrl ? (
             <video
-              className='w-full max-w-2xl'
+              className='w-full max-w-2xl rounded-sm'
               controls
               autoPlay
               muted
