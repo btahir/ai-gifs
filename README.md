@@ -8,6 +8,34 @@ AI GIFs is a powerful application that lets you generate GIFs using advanced AI 
 
 It was built from the official Next.js + TailwindCSS starter.
 
+This repo, while showcasing a specific AI App, is meant to serve as a starter. You can take it, modify the model on the backend (explore the numerous options Replicate offers), and voilà, you have a new app!
+
+## AI App Production Checklist
+
+Below are steps taken during the app's development. They serve as a general guideline when building an AI-based application.
+
+**App Architecture**:
+The app architecture is straightforward. Users input a prompt via a form. Upon submission, a backend route handler is triggered, which then calls the AI model and returns the result.
+
+**AI Model Hosting**:
+We've utilized Replicate for hosting our AI model. This eliminates the need for individual deployment, handling inference, scaling, and the often cumbersome devops-related tasks.
+
+**Optimizations**:
+
+- **Prompt Suggestions**: Leveraging libraries like `promptmaker` can pre-populate the form, offering users creative ideas.
+  
+- **Loading State**: To enhance user experience while awaiting results, we implemented a loading GIF, aligning with the theme of our app.
+  
+- **Safety Checks**: For initial content filtering, an older library named `bad-words` was employed. For more in-depth content checks, consider modern libraries such as [nsfw-filter](https://github.com/Nutlope/nsfw-filter).
+
+**Rate Limits**:
+Before launching, especially for free apps, it's crucial to consider potential costs associated with serverless architectures. To avoid unexpected bills, we've integrated rate limits using Upstash, ensuring a controlled request flow. The setup is hassle-free and efficient.
+
+Now, with everything in place, it's tempting to invite users immediately. However, always ensure preventive measures are established to maintain budget and performance.
+
+**Deployment**:
+The site is deploy on Vercel.
+
 ## Getting Started
 
 **Install Dependencies**:
@@ -25,6 +53,8 @@ bun install
 This repository utilizes [Replicate](https://replicate.com/) for model inference and [Upstash](https://upstash.com/) for rate limiting. Ensure you have accounts set up for both services.
 
 **Environment Variables to Add**:
+
+Create a .env.local file and add these variables.
 
 ```bash
 REPLICATE_API_TOKEN=
