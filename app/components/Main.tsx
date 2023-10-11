@@ -51,10 +51,10 @@ export default function Main({}: Props) {
   }
 
   return (
-    <div className='w-full h-full flex justify-center flex-col items-center mt-12 px-4'>
+    <div className='mt-12 flex h-full w-full flex-col items-center justify-center px-4'>
       <form
         onSubmit={handleSubmit}
-        className='flex flex-col items-center w-full justify-center'
+        className='flex w-full flex-col items-center justify-center'
       >
         <textarea
           id='prompt'
@@ -62,13 +62,13 @@ export default function Main({}: Props) {
           rows={3}
           defaultValue={promptmaker()}
           placeholder='Enter gif prompt...'
-          className='w-full max-w-sm p-2 rounded-lg bg-slate-100 border-none text-slate-600 placeholder-slate-400 border border-slate-200 resize-none'
+          className='w-full max-w-sm resize-none rounded-lg border border-none border-slate-200 bg-slate-100 p-2 text-slate-600 placeholder-slate-400'
         />
         <button
           type='submit'
-          className={`bg-blue-600 hover:bg-blue-700 hover:text-white text-base text-slate-50 py-2 px-4 mt-2 rounded-lg border w-full max-w-sm ${
+          className={`mt-2 w-full max-w-sm rounded-lg border bg-blue-600 px-4 py-2 text-base text-slate-50 hover:bg-blue-700 hover:text-white ${
             btnDisabled
-              ? 'opacity-50 cursor-not-allowed pointer-events-none'
+              ? 'pointer-events-none cursor-not-allowed opacity-50'
               : ''
           }}`}
         >
