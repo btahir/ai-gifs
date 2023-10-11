@@ -59,7 +59,7 @@ export default function Main({}: Props) {
         <textarea
           id='prompt'
           name='prompt'
-          rows={2}
+          rows={3}
           defaultValue={promptmaker()}
           placeholder='Enter gif prompt...'
           className='w-full max-w-sm p-2 rounded-lg bg-slate-100 border-none text-slate-600 placeholder-slate-400 border border-slate-200 resize-none'
@@ -87,7 +87,7 @@ export default function Main({}: Props) {
           </div>
         ) : resultUrl ? (
           <video
-            className='w-full max-w-2xl rounded-sm'
+            className='w-full max-w-2xl rounded-lg'
             controls
             autoPlay
             muted
