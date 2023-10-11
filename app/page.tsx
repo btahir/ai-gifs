@@ -8,7 +8,7 @@ export default function IndexPage() {
       <img
         src='/logo.png'
         alt='AI GIFs'
-        className='h-10 absolute top-0 left-0 mt-4 ml-4'
+        className='h-6 sm:h-8 absolute top-0 left-0 mt-4 ml-4'
       />
       <div className='absolute top-0 right-0 mt-4 mr-4 flex items-center'>
         <Github className='hover:text-blue-600 h-6 w-6' />
