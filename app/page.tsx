@@ -1,8 +1,11 @@
 import Main from '@/app/components/Main'
 import Github from '@/app/components/Github'
 import Twitter from '@/app/components/Twitter'
+import { redis } from '@/app/utils/redis'
+import { nFormatter } from '@/app/utils/helpers'
 
-export default function IndexPage() {
+export default async function IndexPage() {
+  const aigifCt: number = Number(await redis.get('ai_gif_ct')) || 0
   return (
     <main className='relative mx-auto h-full min-h-screen w-full max-w-6xl bg-white py-12 text-slate-900 lg:px-6'>
       <img
@@ -17,8 +20,13 @@ export default function IndexPage() {
       <h1 className='text-center text-4xl font-extrabold text-blue-950 sm:text-5xl'>
         AI GIFs
       </h1>
-      <p className='mt-2 text-center text-xl text-slate-500 sm:text-2xl'>
-        Generate GIFs using AI
+      <p className='mt-2 text-center text-lg text-slate-500 sm:text-xl'>
+        Generate GIFs using AI.
+        <br />{' '}
+        <span className='font-bold text-blue-600'>
+          {nFormatter(aigifCt)}
+        </span>{' '}
+        GIFs generated!
       </p>
       <Main />
     </main>

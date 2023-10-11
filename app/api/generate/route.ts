@@ -1,14 +1,6 @@
 import Replicate from 'replicate'
-import { Ratelimit } from '@upstash/ratelimit'
-import { Redis } from '@upstash/redis'
-
-// Create a new ratelimiter, that allows 50 / 3 hours
-const ratelimit = new Ratelimit({
-  redis: Redis.fromEnv(),
-  limiter: Ratelimit.slidingWindow(300, '3 h'),
-  analytics: false,
-  prefix: '@upstash/ratelimit',
-})
+import { redis } from '@/app/utils/redis'
+import { ratelimit } from '@/app/utils/redis'
 
 const identifier = 'gif-api'
 
@@ -35,6 +27,8 @@ export async function POST(request: Request) {
       },
     }
   )
+
+  redis.incr('ai_gif_ct')
 
   return Response.json({ status: 'success', message: output })
 }
