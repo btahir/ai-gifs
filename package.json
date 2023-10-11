@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bad-words": "^3.0.4",
     "install": "^0.13.0",
     "next": "13.5.4",
+    "promptmaker": "^1.1.0",
     "react": "^18",
     "react-dom": "^18",
     "replicate": "^0.20.1"

@@ -1,6 +1,13 @@
 'use client'
 import { useState } from 'react'
 
+// @ts-ignore
+import promptmaker from 'promptmaker'
+// @ts-ignore
+import Filter from 'bad-words'
+
+const filter = new Filter()
+
 export default function IndexPage() {
   const [loading, setLoading] = useState(false)
   const [resultUrl, setResultUrl] = useState('')
@@ -10,12 +17,18 @@ export default function IndexPage() {
     setLoading(true)
     const formData = new FormData(e.currentTarget)
     const prompt = formData.get('prompt')
+
+    if (filter.isProfane(prompt)) {
+      setLoading(false)
+      alert("Please don't use profanity")
+      return
+    }
+
     const res = await fetch('/api/generate', {
       method: 'POST',
       body: JSON.stringify({ prompt }),
     })
     const data = await res.json()
-    console.log(data)
     setResultUrl(data)
     setLoading(false)
   }
@@ -36,6 +49,7 @@ export default function IndexPage() {
           <input
             id='prompt'
             name='prompt'
+            defaultValue={promptmaker()}
             placeholder='Enter gif prompt...'
             className='w-full max-w-sm flex-1 p-2 rounded-l-lg bg-slate-100 border-none text-slate-600 placeholder-slate-400 border border-slate-200'
           />
