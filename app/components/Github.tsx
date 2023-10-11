@@ -1,6 +1,10 @@
 export default function Github({ className }: { className?: string }) {
   return (
-    <a href=''>
+    <a
+      href='https://github.com/btahir/ai-gifs'
+      target='_blank'
+      rel='noopener noreferrer'
+    >
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width='20'
