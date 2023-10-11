@@ -26,6 +26,8 @@ This repository utilizes [Replicate](https://replicate.com/) for model inference
 
 **Environment Variables to Add**:
 
+Create a .env.local file and add these variables.
+
 ```bash
 REPLICATE_API_TOKEN=
 UPSTASH_REDIS_REST_URL=
