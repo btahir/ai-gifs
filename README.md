@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## AI GIFs
+
+AI GIFs is a powerful application that lets you generate GIFs using advanced AI techniques. Whether you're looking for a unique meme, a captivating animation, or just exploring the boundaries of AI-generated content, AI GIFs has got you covered.
+
+It was built from the official Next.js + TailwindCSS starter.
 
 ## Getting Started
 
