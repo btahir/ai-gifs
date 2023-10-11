@@ -2,10 +2,10 @@ import Replicate from 'replicate'
 import { Ratelimit } from '@upstash/ratelimit'
 import { Redis } from '@upstash/redis'
 
-// Create a new ratelimiter, that allows 500 requests daily
+// Create a new ratelimiter, that allows 50 / 3 hours
 const ratelimit = new Ratelimit({
   redis: Redis.fromEnv(),
-  limiter: Ratelimit.slidingWindow(500, '1 d'),
+  limiter: Ratelimit.slidingWindow(50, '3 h'),
   analytics: false,
   prefix: '@upstash/ratelimit',
 })
