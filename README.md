@@ -8,7 +8,29 @@ It was built from the official Next.js + TailwindCSS starter.
 
 ## Getting Started
 
-First, run the development server:
+**Install Dependencies**:
+
+```bash
+npm install
+# or
+yarn
+# or
+pnpm install
+# or
+bun install
+```
+
+This repository utilizes [Replicate](https://replicate.com/) for model inference and [Upstash](https://upstash.com/) for rate limiting. Ensure you have accounts set up for both services.
+
+**Environment Variables to Add**:
+
+\```bash
+REPLICATE_API_TOKEN=
+UPSTASH_REDIS_REST_URL=
+UPSTASH_REDIS_REST_TOKEN=
+\```
+
+**Run the development server**:
 
 ```bash
 npm run dev
