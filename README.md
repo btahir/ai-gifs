@@ -24,11 +24,11 @@ This repository utilizes [Replicate](https://replicate.com/) for model inference
 
 **Environment Variables to Add**:
 
-\```bash
+```bash
 REPLICATE_API_TOKEN=
 UPSTASH_REDIS_REST_URL=
 UPSTASH_REDIS_REST_TOKEN=
-\```
+```
 
 **Run the development server**:
 
