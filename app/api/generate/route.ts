@@ -12,6 +12,8 @@ const ratelimit = new Ratelimit({
 
 const identifier = 'gif-api'
 
+export const maxDuration = 60
+
 export async function POST(request: Request) {
   const { prompt } = await request.json()
   const { success } = await ratelimit.limit(identifier)
