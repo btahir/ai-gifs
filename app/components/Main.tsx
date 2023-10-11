@@ -80,10 +80,7 @@ export default function Main({}: Props) {
         {loading ? (
           <div className='font-medium text-slate-600 sm:text-lg'>
             Loading your GIF. This can take 20-30 seconds.
-            <img
-              className='mt-4 w-full max-w-xs'
-              src='https://media.giphy.com/media/l3nWhI38IWDofyDrW/giphy.gif'
-            />
+            <img className='mt-4 w-full max-w-xs' src='/loading.gif' />
           </div>
         ) : resultUrl ? (
           <video
