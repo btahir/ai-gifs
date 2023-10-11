@@ -47,20 +47,21 @@ export default function Main({}: Props) {
     <div className='w-full h-full flex justify-center flex-col items-center mt-12 px-4'>
       <form
         onSubmit={handleSubmit}
-        className='flex items-center w-full justify-center'
+        className='flex flex-col items-center w-full justify-center'
       >
-        <input
+        <textarea
           id='prompt'
           name='prompt'
+          rows={2}
           defaultValue={promptmaker()}
           placeholder='Enter gif prompt...'
-          className='w-full max-w-sm flex-1 p-2 rounded-l-lg bg-slate-100 border-none text-slate-600 placeholder-slate-400 border border-slate-200'
+          className='w-full max-w-sm p-2 rounded-lg bg-slate-100 border-none text-slate-600 placeholder-slate-400 border border-slate-200'
         />
         <button
           type='submit'
-          className='bg-blue-600 hover:bg-blue-700 hover:text-white flex-shrink-0 text-base text-slate-50 py-2 px-4 rounded-r-lg border'
+          className='bg-blue-600 hover:bg-blue-700 hover:text-white text-base text-slate-50 py-2 px-4 mt-2 rounded-lg border w-full max-w-sm'
         >
-          Hit it
+          Generate
         </button>
       </form>
 
