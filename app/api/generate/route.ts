@@ -5,7 +5,7 @@ import { Redis } from '@upstash/redis'
 // Create a new ratelimiter, that allows 50 / 3 hours
 const ratelimit = new Ratelimit({
   redis: Redis.fromEnv(),
-  limiter: Ratelimit.slidingWindow(200, '3 h'),
+  limiter: Ratelimit.slidingWindow(300, '3 h'),
   analytics: false,
   prefix: '@upstash/ratelimit',
 })
