@@ -1,4 +1,25 @@
+'use client'
+import { useState } from 'react'
+
 export default function IndexPage() {
+  const [loading, setLoading] = useState(false)
+  const [resultUrl, setResultUrl] = useState('')
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setLoading(true)
+    const formData = new FormData(e.currentTarget)
+    const prompt = formData.get('prompt')
+    const res = await fetch('/api/generate', {
+      method: 'POST',
+      body: JSON.stringify({ prompt }),
+    })
+    const data = await res.json()
+    console.log(data)
+    setResultUrl(data)
+    setLoading(false)
+  }
+
   return (
     <main className='bg-white text-slate-900 h-full w-full min-h-screen py-12 px-2 lg:px-6'>
       <h1 className='text-4xl sm:text-55xl font-bold text-center text-blue-950'>
@@ -8,10 +29,44 @@ export default function IndexPage() {
         Generate GIFs using AI
       </p>
       <div className='w-full h-full flex justify-center flex-col items-center mt-12 px-4'>
-        <input
-          placeholder='Enter gif prompt...'
-          className='w-full max-w-sm p-2 rounded-sm bg-slate-100 border border-slate-200 text-slate-600 placeholder-slate-400'
-        />
+        <form
+          onSubmit={handleSubmit}
+          className='flex items-center w-full justify-center'
+        >
+          <input
+            id='prompt'
+            name='prompt'
+            placeholder='Enter gif prompt...'
+            className='w-full max-w-sm flex-1 p-2 rounded-l-lg bg-slate-100 border-none text-slate-600 placeholder-slate-400 border border-slate-200'
+          />
+          <button
+            type='submit'
+            className='bg-blue-600 hover:bg-blue-700 hover:text-white flex-shrink-0 text-base text-slate-50 py-2 px-4 rounded-r-lg border'
+          >
+            Hit it
+          </button>
+        </form>
+
+        <div className='mt-12'>
+          {loading ? (
+            <div className='font-medium text-slate-600 sm:text-lg'>
+              Loading your GIF. This can take 20-30 seconds.
+              <img
+                className='mt-4 w-full max-w-xs'
+                src='https://media.giphy.com/media/l3nWhI38IWDofyDrW/giphy.gif'
+              />
+            </div>
+          ) : resultUrl ? (
+            <video
+              className='w-full max-w-2xl'
+              controls
+              autoPlay
+              muted
+              loop
+              src={resultUrl}
+            />
+          ) : null}
+        </div>
       </div>
     </main>
   )
