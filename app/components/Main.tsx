@@ -66,11 +66,11 @@ export default function Main({}: Props) {
         />
         <button
           type='submit'
-          className={`mt-2 w-full max-w-sm rounded-lg border bg-blue-600 px-4 py-2 text-base text-slate-50 hover:bg-blue-700 hover:text-white ${
+          className={`${
             btnDisabled
               ? 'pointer-events-none cursor-not-allowed opacity-50'
               : ''
-          }}`}
+          } hover:text-white} mt-2 w-full max-w-sm rounded-lg border bg-blue-600 px-4 py-2 text-base text-slate-50 hover:bg-blue-700`}
         >
           Generate
         </button>
