@@ -12,6 +12,8 @@ This repo, while showcasing a specific AI App, is meant to serve as a starter. Y
 
 ## AI App Production Checklist
 
+I do a quick walkthrouigh of this [here](https://www.loom.com/share/a9787af9f3944b72bde41dd4bd1a0d77?sid=52c9732a-4f78-4f5c-bfc1-74a16f047f88).
+
 Below are steps taken during the app's development. They serve as a general guideline when building an AI-based application.
 
 **App Architecture**:
