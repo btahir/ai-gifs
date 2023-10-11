@@ -29,8 +29,15 @@ export default function IndexPage() {
       body: JSON.stringify({ prompt }),
     })
     const data = await res.json()
-    setResultUrl(data)
-    setLoading(false)
+
+    if (data.status === 429) {
+      setLoading(false)
+      alert('You have hit the limit. Please try again in 3 hours.')
+      return
+    } else {
+      setResultUrl(data.message)
+      setLoading(false)
+    }
   }
 
   return (
