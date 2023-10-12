@@ -83,12 +83,8 @@ export default function Main({}: Props) {
             <img className='mt-4 w-full max-w-xs' src='/loading.gif' />
           </div>
         ) : resultUrl ? (
-          <video
+          <img
             className='w-full max-w-2xl rounded-lg'
-            controls
-            autoPlay
-            muted
-            loop
             src={resultUrl}
           />
         ) : null}
