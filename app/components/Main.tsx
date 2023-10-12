@@ -83,10 +83,7 @@ export default function Main({}: Props) {
             <img className='mt-4 w-full max-w-xs' src='/loading.gif' />
           </div>
         ) : resultUrl ? (
-          <img
-            className='w-full max-w-2xl rounded-lg'
-            src={resultUrl}
-          />
+          <img className='w-full max-w-2xl rounded-lg' src={resultUrl} />
         ) : null}
       </div>
     </div>
