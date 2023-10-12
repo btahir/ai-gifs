@@ -9,7 +9,7 @@ export const redis = new Redis({
 // Create a new ratelimiter, that allows 50 / 3 hours
 export const ratelimit = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(300, '3 h'),
+  limiter: Ratelimit.slidingWindow(50, '3 h'),
   analytics: false,
   prefix: '@upstash/ratelimit',
 })
