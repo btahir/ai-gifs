@@ -19,7 +19,7 @@ export async function POST(request: Request) {
   })
 
   const output = await replicate.run(
-    'lucataco/hotshot-xl:3897d2751458e9f0d4f969a9fd072627aadfa6a7e001875c3facb8e5e8f7182b',
+    'lucataco/hotshot-xl:b57dddff6ae2029be57eab3d17e0de5f1c83b822f0defd8ce49bee44d7b52ee6',
     {
       input: {
         prompt,
