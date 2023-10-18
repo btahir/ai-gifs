@@ -1,4 +1,5 @@
 import Main from '@/app/components/Main'
+import Banner from '@/app/components/Banner'
 import Github from '@/app/components/Github'
 import Twitter from '@/app/components/Twitter'
 import { redis } from '@/app/utils/redis'
@@ -29,6 +30,7 @@ export default async function IndexPage() {
         GIFs generated!
       </p>
       <Main />
+      <Banner />
     </main>
   )
 }
