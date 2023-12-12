@@ -4,11 +4,11 @@ export default function Banner() {
       <div className='pointer-events-auto flex items-center justify-between gap-x-6 bg-slate-900 px-6 py-2.5 sm:rounded-xl sm:py-3 sm:pl-4 sm:pr-3.5'>
         <p className='text-sm leading-6 text-white'>
           <a
-            href='https://www.you-tldr.com?utm_source=aigifs'
+            href='https://www.shortsgenerator.com?utm_source=aigifs'
             target='_blank'
             rel='noopener noreferrer'
           >
-            <strong className='font-semibold'>YOU-TLDR</strong>
+            <strong className='font-semibold'>Shorts Generator</strong>
             <svg
               viewBox='0 0 2 2'
               className='mx-2 inline h-0.5 w-0.5 fill-current'
@@ -16,7 +16,7 @@ export default function Banner() {
             >
               <circle cx={1} cy={1} r={1} />
             </svg>
-            Get the TLDR of any YouTube Video in seconds&nbsp;
+            Turn Your Ideas into Viral Short Videos in Minutes&nbsp;
             <span aria-hidden='true'>&rarr;</span>
           </a>
         </p>
