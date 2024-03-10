@@ -16,8 +16,7 @@ export default function Banner() {
             >
               <circle cx={1} cy={1} r={1} />
             </svg>
-            Give us one image, and we&apos;ll give you galleries of glam, grit,
-            grace, and more.&nbsp;
+            Turn one image into 25 different looks in Minutes
             <span aria-hidden='true'>&rarr;</span>
           </a>
         </p>
