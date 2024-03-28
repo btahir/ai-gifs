@@ -19,7 +19,7 @@ export async function POST(request: Request) {
   })
 
   const output = await replicate.run(
-    'lucataco/hotshot-xl:b57dddff6ae2029be57eab3d17e0de5f1c83b822f0defd8ce49bee44d7b52ee6',
+    'camenduru/animatediff-lightning-4-step:be39c6d599942831314b770f03cfd062bfd0faa8cc52e9289bcce830b721fcb6',
     {
       input: {
         prompt,

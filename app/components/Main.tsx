@@ -76,14 +76,19 @@ export default function Main({}: Props) {
         </button>
       </form>
 
-      <div className='mt-12'>
+      <div className='my-12'>
         {loading ? (
           <div className='font-medium text-slate-600 sm:text-lg'>
             Loading your GIF. This can take 20-30 seconds.
             <img className='mt-4 w-full max-w-xs' src='/loading.gif' />
           </div>
         ) : resultUrl ? (
-          <img className='w-full max-w-2xl rounded-lg' src={resultUrl} />
+          <video
+            autoPlay
+            loop
+            className='h-96 w-full max-w-2xl rounded-lg'
+            src={resultUrl}
+          />
         ) : null}
       </div>
     </div>
