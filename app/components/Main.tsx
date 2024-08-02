@@ -41,7 +41,7 @@ export default function Main({}: Props) {
     if (data.status === 429) {
       setLoading(false)
       setBtnDisabled(false)
-      alert('You have hit the limit. Please try again in 3 hours.')
+      alert('You have hit the limit. Please try again in 24 hours.')
       return
     } else {
       setResultUrl(data.message)
